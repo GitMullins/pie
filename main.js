@@ -64,17 +64,19 @@ const printToDom = (divId, text) => {
     document.getElementById(divId).innerHTML = text;
 }
 
-
-const nameFunction = () => {
-    let message = '';
+const pieBuilder = () => {
+    let message ='';
     pies.forEach((pie) => {
+        message += `<div class='card'>`
         message += `<h2>${pie.name}</h2>`
-    })
+        message += `<img src='${pie.imageURL}'></img>`
+        message += `</div>`
+    });
     printToDom('names', message);
 };
 
 const init = () => {
-    nameFunction();
+    pieBuilder();
 }
 
 init();
